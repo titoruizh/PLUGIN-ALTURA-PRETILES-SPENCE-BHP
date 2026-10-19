@@ -1,10 +1,10 @@
-# PLUGIN-ALTURA-PRETILES-SPENCE
+# PLUGIN-ALTURA-PRETILES-SPENCE-BHP
 
 Plugin de QGIS para medir la altura de pretiles sobre la topografía del día y generar los archivos de entrega (CSV y DXF).
 
 > 🔒 Código privado. Este repositorio solo describe el proyecto; no incluye código ni datos de la operación.
 >
-> 🚧 En desarrollo activo (v0.11).
+> ✅ En producción (v0.11): conectado en línea a Supabase, con datos reales en tiempo real y sincronización con la cuenta institucional.
 
 <p align="center">
   <img src="panel.png" alt="Panel del plugin en QGIS" width="45%">
@@ -28,7 +28,7 @@ Todo el flujo pasa a QGIS:
 - Dibujar cada pretil como un par piso → borde, viendo la altura **antes** de confirmar el clic.
 - Revisión automática (QAQC) que no deja guardar alturas ≤ 0 ni pares rotos.
 - Exportar el CSV y el DXF con el mismo formato que se entregaba antes.
-- Unir el trabajo de varios operadores en un solo entregable.
+- Trabajo en línea: los pretiles se guardan en Supabase y se sincronizan en tiempo real entre operadores, con inicio de sesión mediante la cuenta institucional.
 
 ```mermaid
 flowchart LR
@@ -62,15 +62,15 @@ El cálculo vive en Python puro, separado de QGIS, y se prueba con pytest contra
 
 ## Tecnologías
 
-Python · QGIS 4 (PyQGIS, Qt6) · PDAL · GeoPackage · pytest
+Python · QGIS 4 (PyQGIS, Qt6) · Supabase · PDAL · pytest
 
 ## Estado
 
-Funciona dentro de QGIS con carga de topografía, edición de pretiles con altura en vivo, ajuste automático de la punta, perfil del pretil, QAQC y exportación. Se sigue afinando antes de reemplazar por completo el proceso anterior.
+En producción. El plugin se usa con datos reales de la operación: carga de topografía, edición de pretiles con altura en vivo, ajuste automático de la punta, perfil del pretil, QAQC y exportación, todo sincronizado en línea con Supabase.
 
 ## English
 
-QGIS plugin to measure berm (safety bund) heights on the daily topography and produce the CSV/DXF deliverables, replacing a manual Global Mapper + Excel workflow. The calculation core is pure Python, tested against real data (1839/1839 berms match the original spreadsheet; deliverables reproduced byte for byte). Includes live height while editing, automatic crest adjustment from the terrain profile, QAQC and export. In active development; source code is private.
+QGIS plugin to measure berm (safety bund) heights on the daily topography and produce the CSV/DXF deliverables, replacing a manual Global Mapper + Excel workflow. The calculation core is pure Python, tested against real data (1839/1839 berms match the original spreadsheet; deliverables reproduced byte for byte). Includes live height while editing, automatic crest adjustment from the terrain profile, QAQC and export. In production, synced online through Supabase with real-time data and institutional account sign-in. Source code is private.
 
 ---
 Tito Ruiz Haros · [github.com/titoruizh](https://github.com/titoruizh)
