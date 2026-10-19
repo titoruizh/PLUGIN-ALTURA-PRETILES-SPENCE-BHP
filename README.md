@@ -5,6 +5,8 @@ Plugin de QGIS para medir la altura de pretiles sobre la topografía del día y 
 > 🔒 Código privado. Este repositorio solo describe el proyecto; no incluye código ni datos de la operación.
 >
 > ✅ En producción (v0.11): conectado en línea a Supabase, con datos reales en tiempo real y sincronización con la cuenta institucional.
+>
+> ⏱️ El tiempo del proceso bajó de 1–2 horas a unos 10 minutos.
 
 <p align="center">
   <img src="panel.png" alt="Panel del plugin en QGIS" width="45%">
@@ -66,11 +68,11 @@ Python · QGIS 4 (PyQGIS, Qt6) · Supabase · PDAL · pytest
 
 ## Estado
 
-En producción. El plugin se usa con datos reales de la operación: carga de topografía, edición de pretiles con altura en vivo, ajuste automático de la punta, perfil del pretil, QAQC y exportación, todo sincronizado en línea con Supabase.
+En producción. El proceso, que antes tomaba 1–2 horas, ahora toma unos 10 minutos. El plugin se usa con datos reales de la operación: carga de topografía, edición de pretiles con altura en vivo, ajuste automático de la punta, perfil del pretil, QAQC y exportación, todo sincronizado en línea con Supabase.
 
 ## English
 
-QGIS plugin to measure berm (safety bund) heights on the daily topography and produce the CSV/DXF deliverables, replacing a manual Global Mapper + Excel workflow. The calculation core is pure Python, tested against real data (1839/1839 berms match the original spreadsheet; deliverables reproduced byte for byte). Includes live height while editing, automatic crest adjustment from the terrain profile, QAQC and export. In production, synced online through Supabase with real-time data and institutional account sign-in. Source code is private.
+QGIS plugin to measure berm (safety bund) heights on the daily topography and produce the CSV/DXF deliverables, replacing a manual Global Mapper + Excel workflow. The calculation core is pure Python, tested against real data (1839/1839 berms match the original spreadsheet; deliverables reproduced byte for byte). Includes live height while editing, automatic crest adjustment from the terrain profile, QAQC and export. In production; processing time went from 1–2 hours to about 10 minutes. Synced online through Supabase with real-time data and institutional account sign-in. Source code is private.
 
 ---
 Tito Ruiz Haros · [github.com/titoruizh](https://github.com/titoruizh)
